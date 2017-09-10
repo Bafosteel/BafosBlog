@@ -1,0 +1,16 @@
+{% extends 'BafosApp/base.html' %}
+ 
+{% block BafosApp_title %}{{ entry.title }}{% endblock %}
+ 
+{% block BafosApp_content %}
+    <h1>{{ entry.title }}</h1>
+    <div>
+        {% autoescape off %}
+        {{ entry.body }}
+        {% endautoescape %}
+    </div>
+    <br/>
+    <div><i>{{ entry.published_date|date:"Y/M/d" }}</i></div>
+    <br/>
+    <a href="{% url 'blog_index' %}">Назад к списку статей</a>
+{% endblock %}

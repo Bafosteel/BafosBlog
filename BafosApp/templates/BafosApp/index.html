@@ -1,0 +1,15 @@
+{% extends 'BafosApp/base.html' %}
+ 
+{% block BafosApp_title %}Список статей{% endblock %}
+
+{% block BafosApp_content %}
+    {% for entry in entries %}
+        <div>
+            <a href="{{ entry.get_absolute_url }}">
+                <h2>{{ entry.title }}</h2>
+            </a>
+            <div>{{ entry.tease }}</div>
+            <div><i>{{ entry.published_date|date:"Y/M/d" }}</i></div>
+        </div>
+    {% endfor %}
+{% endblock %}
