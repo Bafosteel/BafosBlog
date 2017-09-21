@@ -1,8 +1,12 @@
 from django.db import models
-from django.utils import timezone
 from datetime import datetime
 
 # Create your models here.
+
+STATUS_CHOISES = (
+    ('d','Draft'),
+    ('p','published'),
+)
 
 class Category(models.Model):
     name = models.CharField('Name',max_length=50)
@@ -27,6 +31,8 @@ class BlogPost(models.Model):
     tease = models.TextField('Tease(summary)', blank=True)
     body = models.TextField('Content')
     draft = models.BooleanField('Is draft',default=True)
+    status = models.CharField(max_length=1,choices=STATUS_CHOISES,
+                              default='d')
     created_date = models.DateTimeField('Date of creation',default=datetime.now)
     published_date = models.DateTimeField('Date of publication',default=datetime.now)
     category = models.ForeignKey(Category,related_name='entries')
@@ -48,4 +54,3 @@ class BlogPost(models.Model):
                                      'month': self.published_date.strftime('%m'),
                                      'day': self.published_date.strftime('%d'),
                                      'slug': self.slug})
-

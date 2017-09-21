@@ -3,8 +3,8 @@
 {% block BafosApp_title %}{{ entry.title }}{% endblock %}
  
 {% block BafosApp_content %}
-    <h1>{{ entry.title }}</h1>
-    <div>
+    <h1 class="headline">{{ entry.title }}</h1>
+    <div class="tease">
         {% autoescape off %}
         {{ entry.body }}
         {% endautoescape %}

@@ -4,12 +4,13 @@
 
 {% block BafosApp_content %}
     {% for entry in entries %}
-        <div>
-            <a href="{{ entry.get_absolute_url }}">
-                <h2>{{ entry.title }}</h2>
+        <div class="post">
+            <a>
+                <h2 class="headline">{{ entry.title }}</h2>
             </a>
-            <div>{{ entry.tease }}</div>
-            <div><i>{{ entry.published_date|date:"Y/M/d" }}</i></div>
+            <div><a class="tease">{{ entry.tease }}...<a href="{{ entry.get_absolute_url }}">read more</a></a></div>
+            <div><i class="category">{{ entry.category }}</i></div>
+            <div><i class="datepublish">{{ entry.published_date|date:"Y/M/d" }}</i></div>
         </div>
     {% endfor %}
 {% endblock %}
