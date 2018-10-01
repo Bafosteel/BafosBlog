@@ -22,6 +22,19 @@ em {
     top: 200px;
     padding:40px;
 }
+
+.texts {
+        margin: 10px 750px;
+}
+
+.fields {
+    margin: auto 700px;
+}
+
+.btn{
+    margin: auto 730px;
+}
+
 .headline {
     color: #466995;
     font-family: Georgia;

@@ -4,7 +4,6 @@ from datetime import datetime
 # Register your models here.
 
 
-
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         'slug': ('name',),

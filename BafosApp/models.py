@@ -35,7 +35,7 @@ class BlogPost(models.Model):
                               default='d')
     created_date = models.DateTimeField('Date of creation',default=datetime.now)
     published_date = models.DateTimeField('Date of publication',default=datetime.now)
-    category = models.ForeignKey(Category,related_name='entries')
+    category = models.ForeignKey(Category,related_name='entries', on_delete=models.DO_NOTHING)
 
     objects = PostManager()
 
@@ -48,9 +48,11 @@ class BlogPost(models.Model):
         verbose_name_plural = 'Blog Posts'
         ordering = ('-published_date',)
 
-    @models.permalink
+
+    #@models.permalink
     def get_absolute_url(self):
-        return ('blog_details', (), {'year': self.published_date.year,
-                                     'month': self.published_date.strftime('%m'),
-                                     'day': self.published_date.strftime('%d'),
-                                     'slug': self.slug})
+        return ('blog_details', ())
+
+
+class Data(models.Model):
+    pass

@@ -1,16 +1,9 @@
 {% extends 'BafosApp/base.html' %}
  
-{% block BafosApp_title %}Список статей{% endblock %}
+{% block BafosApp_title %}ADV APPS{% endblock %}
 
 {% block BafosApp_content %}
-    {% for entry in entries %}
-        <div class="post">
-            <a>
-                <h2 class="headline">{{ entry.title }}</h2>
-            </a>
-            <div><a class="tease">{{ entry.tease }}...<a href="{{ entry.get_absolute_url }}">read more</a></a></div>
-            <div><i class="category">{{ entry.category }}</i></div>
-            <div><i class="datepublish">{{ entry.published_date|date:"Y/M/d" }}</i></div>
+    <div class="post">
+         <div><a class="tease">Выберите соответствующую вкладку</a></div>
         </div>
-    {% endfor %}
 {% endblock %}

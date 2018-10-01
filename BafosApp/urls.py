@@ -14,6 +14,14 @@ urlpatterns = [
                    name='blog_archive_day'),
 
                # details
-               url(r'^details/(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<slug>\w+)/$', views.details,
+               url(r'^details/$', views.details,
                    name='blog_details'),
+
+               # youtube
+               url(r'^youtube/$', views.youtube,
+                   name='blog_youtube'),
+
+               # youtube
+               url(r'^youtube/$', views.youtube_data_view,
+                   name='blog_youtube'),
 ]
